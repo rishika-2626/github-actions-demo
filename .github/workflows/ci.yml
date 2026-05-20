@@ -28,6 +28,10 @@ jobs:
   needs: lint
   runs-on: ubuntu-latest
 
+  strategy:
+    matrix:
+      node-version: [18, 20, 22]
+
   steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
@@ -35,7 +39,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: ${{ matrix.node-version }}
 
     - name: Install Dependencies
       run: npm install
