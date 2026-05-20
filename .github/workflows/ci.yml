@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4. # downloads your repo onto the temporary machine
+        uses: actions/checkout@v4  # downloads your repo onto the temporary machine
 
       - name: Setup Node.js
         uses: actions/setup-node@v4 # installs node js
