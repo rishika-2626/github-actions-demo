@@ -50,19 +50,3 @@ jobs:
 
       - name: Run Tests
         run: npm test
-
-#GitHub detects push
- #       ↓
-#Creates temporary Linux computer
-  #      ↓
-#Downloads your repo
- #       ↓
-#Installs Node.js
- #       ↓
-#Runs npm install
- #       ↓
-#Runs tests
- #       ↓
-#Shows success/failure
-
-   
