@@ -11,15 +11,35 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4. # downloads your repo onto the temporary machine
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4 # installs node js
         with:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install # installs package.json
 
       - name: Run Tests
         run: npm test
+
+      - name: Print Message
+        run: echo "Hello from GitHub Actions!"
+
+
+#GitHub detects push
+ #       ↓
+#Creates temporary Linux computer
+  #      ↓
+#Downloads your repo
+ #       ↓
+#Installs Node.js
+ #       ↓
+#Runs npm install
+ #       ↓
+#Runs tests
+ #       ↓
+#Shows success/failure
+
+   
