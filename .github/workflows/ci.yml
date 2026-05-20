@@ -6,30 +6,42 @@ on:
       - main
 
 jobs:
+  jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Linter
+        run: npm run lint
+
   test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4  # downloads your repo onto the temporary machine
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4 # installs node js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install # installs package.json
-      
-      - name: Run Linter
-        run: npm run lint
-
+        run: npm install
 
       - name: Run Tests
         run: npm test
-
-      - name: Print Message
-        run: echo "Hello from GitHub Actions!"
 
 
 #GitHub detects push
